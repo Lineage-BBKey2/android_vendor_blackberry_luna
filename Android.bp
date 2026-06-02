@@ -1888,6 +1888,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib/vendor.qti.hardware.fingerprint@1.0.so",
             ],
             shared_libs: [
+                "libhidl_shim_full",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -1906,6 +1907,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so",
             ],
             shared_libs: [
+                "libhidl_shim_full",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
@@ -33409,6 +33411,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libbinder_shim",
+                "libhidl_shim_full",
                 "libhidlbase",
                 "libbinder",
                 "libutils",
@@ -33625,6 +33628,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libbinder_shim",
+                "libhidl_shim_full",
                 "libhidlbase",
                 "libhidltransport",
                 "libhwbinder",
