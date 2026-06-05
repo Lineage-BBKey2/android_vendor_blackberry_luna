@@ -33774,6 +33774,60 @@ prebuilt_rfsa {
     soc_specific: true,
 }
 
+prebuilt_rfsa {
+    name: "capi_v2_audiodsp",
+    filename: "capi_v2_audiodsp.so",
+    owner: "blackberry",
+    src: "proprietary/vendor/lib/rfsa/adsp/capi_v2_audiodsp.so",
+    relative_install_path: "adsp",
+    soc_specific: true,
+}
+
+prebuilt_rfsa {
+    name: "libedge_smooth_skel",
+    filename: "libedge_smooth_skel.so",
+    owner: "blackberry",
+    src: "proprietary/vendor/lib/rfsa/adsp/libedge_smooth_skel.so",
+    relative_install_path: "adsp",
+    soc_specific: true,
+}
+
+prebuilt_rfsa {
+    name: "libexternal_dog_skel",
+    filename: "libexternal_dog_skel.so",
+    owner: "blackberry",
+    src: "proprietary/vendor/lib/rfsa/adsp/libexternal_dog_skel.so",
+    relative_install_path: "adsp",
+    soc_specific: true,
+}
+
+prebuilt_rfsa {
+    name: "libhvxMathVIO",
+    filename: "libhvxMathVIO.so",
+    owner: "blackberry",
+    src: "proprietary/vendor/lib/rfsa/adsp/libhvxMathVIO.so",
+    relative_install_path: "adsp",
+    soc_specific: true,
+}
+
+prebuilt_rfsa {
+    name: "libscveFaceLandmark_skel",
+    filename: "libscveFaceLandmark_skel.so",
+    owner: "blackberry",
+    src: "proprietary/vendor/lib/rfsa/adsp/libscveFaceLandmark_skel.so",
+    relative_install_path: "adsp",
+    soc_specific: true,
+}
+
+prebuilt_rfsa {
+    name: "libvpp_svc_skel",
+    filename: "libvpp_svc_skel.so",
+    owner: "blackberry",
+    src: "proprietary/vendor/lib/rfsa/adsp/libvpp_svc_skel.so",
+    relative_install_path: "adsp",
+    soc_specific: true,
+}
+
 android_app_import {
     name: "QFingerprintService",
     owner: "blackberry",

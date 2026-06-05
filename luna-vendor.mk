@@ -1825,6 +1825,12 @@ PRODUCT_PACKAGES += \
     libfastcvadsp_skel \
     libscveBlobDescriptor_skel \
     libscveT2T_skel \
+    capi_v2_audiodsp \
+    libedge_smooth_skel \
+    libexternal_dog_skel \
+    libhvxMathVIO \
+    libscveFaceLandmark_skel \
+    libvpp_svc_skel \
     QFingerprintService \
     adsprpcd \
     audioflacapp \
