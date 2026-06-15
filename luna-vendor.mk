@@ -79,6 +79,8 @@ PRODUCT_COPY_FILES += \
     vendor/blackberry/luna/proprietary/vendor/etc/init/vendor.qti.adsprpc-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.adsprpc-service.rc \
     vendor/blackberry/luna/proprietary/vendor/etc/init/vendor.qti.cdsprpc-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.cdsprpc-service.rc \
     vendor/blackberry/luna/proprietary/vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.dsp@1.0-service.rc \
+    vendor/blackberry/luna/proprietary/vendor/etc/permissions/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    vendor/blackberry/luna/proprietary/vendor/etc/permissions/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     vendor/blackberry/luna/proprietary/vendor/etc/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
     vendor/blackberry/luna/proprietary/vendor/firmware/a512_zap.b00:$(TARGET_COPY_OUT_VENDOR)/firmware/a512_zap.b00 \
     vendor/blackberry/luna/proprietary/vendor/firmware/a512_zap.b01:$(TARGET_COPY_OUT_VENDOR)/firmware/a512_zap.b01 \
@@ -86,6 +88,17 @@ PRODUCT_COPY_FILES += \
     vendor/blackberry/luna/proprietary/vendor/firmware/a512_zap.mdt:$(TARGET_COPY_OUT_VENDOR)/firmware/a512_zap.mdt \
     vendor/blackberry/luna/proprietary/vendor/firmware/aw87319_rcv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/aw87319_rcv.bin \
     vendor/blackberry/luna/proprietary/vendor/firmware/aw87319_spk.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/aw87319_spk.bin \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_10_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_10_0.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_12_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_12_0.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_1_1.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_1_1.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_1_6.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_1_6.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_2_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_2_0.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_4_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_4_0.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_5_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_5_0.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_5_1.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_5_1.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_5_2.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_5_2.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_6_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_6_0.fw \
+    vendor/blackberry/luna/proprietary/vendor/firmware/cpp_firmware_v1_8_0.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/cpp_firmware_v1_8_0.fw \
     vendor/blackberry/luna/proprietary/vendor/firmware/goodixfp.b00:$(TARGET_COPY_OUT_VENDOR)/firmware/goodixfp.b00 \
     vendor/blackberry/luna/proprietary/vendor/firmware/goodixfp.b01:$(TARGET_COPY_OUT_VENDOR)/firmware/goodixfp.b01 \
     vendor/blackberry/luna/proprietary/vendor/firmware/goodixfp.b02:$(TARGET_COPY_OUT_VENDOR)/firmware/goodixfp.b02 \
@@ -109,6 +122,8 @@ PRODUCT_PACKAGES += \
     libaudioparsers \
     libcdsp_default_listener \
     libcdsprpc \
+    libchromaflash \
+    libdualcameraddm \
     libfastcvadsp_stub \
     libfastcvopt \
     libmdsprpc \
@@ -129,10 +144,17 @@ PRODUCT_PACKAGES += \
     libmmsw_math \
     libmmsw_opencl \
     libmmsw_platform \
+    liboptizoom \
     libqtigef \
+    libscveCommon \
+    libscveCommon_stub \
+    libscveObjectSegmentation \
+    libscveObjectTracker \
     libsdsprpc \
+    libseemore \
     libsysmon_cdsp_skel \
     libtinycompress_vendor \
+    libvideobokeh \
     libwebrtc_audio_preprocessing \
     libasphere \
     libaudiopreprocessing \
@@ -150,6 +172,9 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     vendor.qti.hardware.dsp@1.0 \
     vendor.qti.hardware.fingerprint@1.0 \
+    camera.sdm660 \
+    libVDBeautyShotAPI \
+    libVDSuperPhotoAPI \
     libactuator_ad5816g \
     libactuator_ad5823 \
     libactuator_ak7345 \
@@ -174,6 +199,10 @@ PRODUCT_PACKAGES += \
     libadm \
     libadsp_hvx_callback_skel \
     libadsp_hvx_stub \
+    libarcsoft_dualcam_refocus \
+    libarcsoft_low_light_shot \
+    libarcsoft_nighthawk \
+    libcamera_imgproc \
     libchromatix_csidtg_common \
     libchromatix_csidtg_cpp_preview \
     libchromatix_csidtg_postproc \
@@ -1627,9 +1656,13 @@ PRODUCT_PACKAGES += \
     libchromatix_s5k4h7_luna_video_4k \
     libchromatix_s5k4h7_luna_zsl_preview_ad5816g \
     libchromatix_s5k4h7_luna_zsl_video_ad5816g \
+    libdepthmapwrapper \
     libdrc \
     libedge_smooth_hvx_stub \
+    libflash_pmic \
+    libhal_dbg \
     libmm-qcamera \
+    libmmcamera2_aec_module \
     libmmcamera2_c2d_module \
     libmmcamera2_cpp_module \
     libmmcamera2_iface_modules \
@@ -1641,18 +1674,22 @@ PRODUCT_PACKAGES += \
     libmmcamera2_pproc_modules \
     libmmcamera2_sensor_modules \
     libmmcamera2_stats_modules \
+    libmmcamera2_tct_vis_module \
     libmmcamera_atmel_at24c32e_eeprom \
     libmmcamera_bokeh \
     libmmcamera_bokeh_oem \
+    libmmcamera_chromaflash_lib \
     libmmcamera_csidtg \
     libmmcamera_depth_map \
     libmmcamera_dummyalgo \
     libmmcamera_dw9761b_2d_eeprom \
+    libmmcamera_edgesmooth_lib \
     libmmcamera_eebinparse \
     libmmcamera_eeprom_util \
     libmmcamera_eztune_module \
     libmmcamera_facedetection_lib \
     libmmcamera_hdr_gb_lib \
+    libmmcamera_hi556_minerva \
     libmmcamera_hvx_add_constant \
     libmmcamera_hvx_grid_sum \
     libmmcamera_imglib \
@@ -1718,12 +1755,15 @@ PRODUCT_PACKAGES += \
     libmmcamera_isp_sub_module \
     libmmcamera_le2464c_eeprom \
     libmmcamera_le2464c_master_eeprom \
+    libmmcamera_llvd \
     libmmcamera_m24c64s_eeprom \
+    libmmcamera_nighthawk \
     libmmcamera_ofilm_ohs0443_ov12a10_eeprom \
     libmmcamera_ofilm_ohs0443_ov13880_eeprom \
     libmmcamera_onsemi_cat24c16_eeprom \
     libmmcamera_onsemi_cat24c32_eeprom \
     libmmcamera_onsemi_cat24c32_imx362_eeprom \
+    libmmcamera_optizoom_lib \
     libmmcamera_ov12a10 \
     libmmcamera_ov13850 \
     libmmcamera_ov13850_q13v06k \
@@ -1739,6 +1779,7 @@ PRODUCT_PACKAGES += \
     libmmcamera_ov5645 \
     libmmcamera_ov5670 \
     libmmcamera_ov5675_luna \
+    libmmcamera_ov5675_luna_eeprom \
     libmmcamera_ov5695 \
     libmmcamera_ov7251 \
     libmmcamera_ov8856 \
@@ -1758,11 +1799,13 @@ PRODUCT_PACKAGES += \
     libmmcamera_s5k2l7 \
     libmmcamera_s5k2l7sx \
     libmmcamera_s5k2l8_athena \
+    libmmcamera_s5k2l8_minerva \
     libmmcamera_s5k2l9_athena \
     libmmcamera_s5k2l9_qtech_athena \
     libmmcamera_s5k2l9_sunny_athena \
     libmmcamera_s5k3l8 \
     libmmcamera_s5k3l8_luna \
+    libmmcamera_s5k3l8_luna_eeprom \
     libmmcamera_s5k3l8_mono \
     libmmcamera_s5k3m2xm \
     libmmcamera_s5k3m2xx \
@@ -1774,10 +1817,12 @@ PRODUCT_PACKAGES += \
     libmmcamera_s5k3p8sp \
     libmmcamera_s5k4h7_athena \
     libmmcamera_s5k4h7_luna \
+    libmmcamera_s5k4h7_minerva \
     libmmcamera_sony_imx214_eeprom \
     libmmcamera_sony_imx298_eeprom \
     libmmcamera_sony_imx378_eeprom \
     libmmcamera_sonyimx135_eeprom \
+    libmmcamera_stillmore_lib \
     libmmcamera_sunny_8865_eeprom \
     libmmcamera_sunny_a12s07c_s5k2l8sx_eeprom \
     libmmcamera_sunny_a8s02c_s5k4h7_eeprom \
@@ -1794,15 +1839,25 @@ PRODUCT_PACKAGES += \
     libmmcamera_sunny_s5k3m3_athena_eeprom \
     libmmcamera_sw2d_lib \
     libmmcamera_thread_services \
+    libmmcamera_trueportrait_lib \
     libmmcamera_truly_cma481_eeprom \
     libmmcamera_truly_cmb433_eeprom \
     libmmcamera_tuning \
     libmmcamera_tuning_lookup \
+    libmmjpeg \
     libmmjpeg_interface \
     libmmlib2d_interface \
     libmmqjpeg_codec \
     libmmqjpegdma \
+    libmpbase \
+    libopencv_java3 \
+    libqomx_core \
+    libqomx_jpegdec \
+    libqomx_jpegenc \
+    libqomx_jpegenc_pipe \
+    libremosaic_daemon \
     libsurround_3mic_proc \
+    libubifocus \
     libqcreverb \
     fingerprint.gf3206 \
     libgf_ca \
@@ -1813,6 +1868,7 @@ PRODUCT_PACKAGES += \
     libvendor.goodix.hardware.fingerprint@1.0 \
     capi_v2_aptX_Classic \
     capi_v2_aptX_HD \
+    capi_v2_audiodsp \
     libFastRPC_AUE_Forward_skel \
     libFastRPC_UTF_Forward_800h_skel \
     libFastRPC_UTF_Forward_Qtc2_skel \
@@ -1821,19 +1877,19 @@ PRODUCT_PACKAGES += \
     libadsp_hvx_skel \
     libapps_mem_heap \
     libdspCV_skel \
-    libfastcvadsp \
-    libfastcvadsp_skel \
-    libscveBlobDescriptor_skel \
-    libscveT2T_skel \
-    capi_v2_audiodsp \
     libedge_smooth_skel \
     libexternal_dog_skel \
+    libfastcvadsp \
+    libfastcvadsp_skel \
     libhvxMathVIO \
+    libscveBlobDescriptor_skel \
     libscveFaceLandmark_skel \
+    libscveT2T_skel \
     libvpp_svc_skel \
     QFingerprintService \
     adsprpcd \
     audioflacapp \
     cdsprpcd \
     dspservice \
+    mm-qcamera-app \
     qfp-daemon
