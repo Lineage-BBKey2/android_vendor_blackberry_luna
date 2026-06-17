@@ -129,7 +129,6 @@ PRODUCT_PACKAGES += \
     libmdsprpc \
     libmm-color-convertor \
     libmm-hdcpmgr \
-    libmm-omxcore \
     libmmcamera2_frame_algorithm \
     libmmcamera2_is \
     libmmcamera2_q3a_core \
