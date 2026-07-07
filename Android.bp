@@ -36751,17 +36751,6 @@ prebuilt_rfsa {
     soc_specific: true,
 }
 
-android_app_import {
-    name: "QFingerprintService",
-    owner: "blackberry",
-    apk: "proprietary/vendor/app/QFingerprintService/QFingerprintService.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    soc_specific: true,
-}
-
 cc_prebuilt_binary {
     name: "adsprpcd",
     owner: "blackberry",
@@ -36889,38 +36878,6 @@ cc_prebuilt_binary {
         },
     },
     compile_multilib: "32",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "qfp-daemon",
-    owner: "blackberry",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/qfp-daemon",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "libqfp-service",
-                "liblog",
-                "libhidltransport",
-                "android.hardware.biometrics.fingerprint@2.1",
-                "vendor.qti.hardware.fingerprint@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    check_elf_files: false,
     strip: {
         none: true,
     },
