@@ -161,13 +161,9 @@ PRODUCT_PACKAGES += \
     libeffectproxy \
     libldnhncr \
     libqcbassboost \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
     libqcvirt \
     libreverbwrapper \
     libvisualizer \
-    libvolumelistener \
     vendor.qti.hardware.dsp@1.0 \
     vendor.qti.hardware.fingerprint@1.0 \
     camera.sdm660 \
