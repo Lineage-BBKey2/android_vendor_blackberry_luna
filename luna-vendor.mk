@@ -106,7 +106,8 @@ PRODUCT_COPY_FILES += \
     vendor/blackberry/luna/proprietary/vendor/firmware/goodixfp.b05:$(TARGET_COPY_OUT_VENDOR)/firmware/goodixfp.b05 \
     vendor/blackberry/luna/proprietary/vendor/firmware/goodixfp.b06:$(TARGET_COPY_OUT_VENDOR)/firmware/goodixfp.b06 \
     vendor/blackberry/luna/proprietary/vendor/firmware/goodixfp.b07:$(TARGET_COPY_OUT_VENDOR)/firmware/goodixfp.b07 \
-    vendor/blackberry/luna/proprietary/vendor/firmware/goodixfp.mdt:$(TARGET_COPY_OUT_VENDOR)/firmware/goodixfp.mdt
+    vendor/blackberry/luna/proprietary/vendor/firmware/goodixfp.mdt:$(TARGET_COPY_OUT_VENDOR)/firmware/goodixfp.mdt \
+    vendor/blackberry/luna/proprietary/vendor/firmware/synaptics/athena_tp.img:$(TARGET_COPY_OUT_VENDOR)/firmware/synaptics/athena_tp.img
 
 PRODUCT_PACKAGES += \
     libFlacSwDec \
